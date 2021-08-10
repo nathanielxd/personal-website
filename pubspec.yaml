@@ -1,0 +1,40 @@
+name: personal_website
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  fluttertoast: ^7.1.6
+  auto_size_text: ^2.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+
+  fonts:
+    - family: Manrope
+      fonts:
+        - asset: fonts/Manrope-Regular.ttf
+    - family: Trajan Pro
+      fonts:
+        - asset: fonts/OpenSans-Regular.ttf
+    - family: Ubuntu
+      fonts:
+        - asset: fonts/Ubuntu-Regular.ttf
+        - asset: fonts/Ubuntu-Bold.ttf
+          weight: 700
+    - family: UbuntuMono
+      fonts:
+        - asset: fonts/UbuntuMono-Regular.ttf

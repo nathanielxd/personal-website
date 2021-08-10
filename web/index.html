@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Mobile App Developer Nathaniel's Portfolio.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="personal_website">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>nathans.dev</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyBI9hqxpn_SuGP2dGSVicsbY2WP8uO48hA",
+    authDomain: "nathaniel-dev.firebaseapp.com",
+    databaseURL: "https://nathaniel-dev.firebaseio.com",
+    projectId: "nathaniel-dev",
+    storageBucket: "nathaniel-dev.appspot.com",
+    messagingSenderId: "531731901427",
+    appId: "1:531731901427:web:747608912b7caeb90bc086",
+    measurementId: "G-YF3ZZWBQGG"
+  };
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+  <script src="main.dart.js" type="application/javascript"></script>
+</body>
+</html>
