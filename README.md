@@ -1,16 +1,20 @@
-# personal_website
+# Personal Website
 
-A new Flutter project.
+[![](https://img.shields.io/badge/Architecture-Flutterfall.dev-yellow?style=for-the-badge)](https://nathans.dev) [![](https://img.shields.io/badge/WEBSITE-NATHANS.dev-green?style=for-the-badge)](https://nathans.dev)
 
-## Getting Started
+My own personal website. You can find it hosted here: https://nathans.dev
 
-This project is a starting point for a Flutter application.
+## Quick docs
 
-A few resources to get you started if this is your first Flutter project:
+It features 3 pages:
+- Landing
+- Projects 
+- About
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+The *home* folder features the bar, responsive screen mechanism and animates switching between pages.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Theme
+
+[![](https://img.shields.io/badge/Theme-personal_flutter_theme-blue?style=for-the-badge)](https://github.com/nathanielxd/personal-flutter-theme)
+
+It uses my own personal theme package hosted on GitHub.

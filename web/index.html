@@ -2,10 +2,9 @@
 <html>
 <head>
   <base href="/">
-
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Mobile App Developer Nathaniel's Portfolio.">
+  <meta name="description" content="Nathaniel Dragusin. Flutter, Mobile, Web Developer.">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -24,16 +23,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
 
 <script>
-  var firebaseConfig = {
-    apiKey: "AIzaSyBI9hqxpn_SuGP2dGSVicsbY2WP8uO48hA",
-    authDomain: "nathaniel-dev.firebaseapp.com",
-    databaseURL: "https://nathaniel-dev.firebaseio.com",
-    projectId: "nathaniel-dev",
-    storageBucket: "nathaniel-dev.appspot.com",
-    messagingSenderId: "531731901427",
-    appId: "1:531731901427:web:747608912b7caeb90bc086",
-    measurementId: "G-YF3ZZWBQGG"
-  };
+  import { firebaseConfig } from './firebase-config.js';
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script>

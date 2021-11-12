@@ -1,26 +1,30 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:personal_website/entities/item.dart';
 
-class ItemWidget extends StatefulWidget {
+class ProjectWidget extends StatefulWidget {
 
-  final Item item;
+  final String title;
+  final String asset;
+  final BoxFit? boxFit;
+  final Color? backgroundColor;
+  final void Function() onTap;
 
-  ItemWidget(this.item);
+  const ProjectWidget({ 
+    Key? key,
+    required this.title,
+    required this.asset,
+    this.boxFit,
+    this.backgroundColor,
+    required this.onTap
+  }) : super(key: key);
 
   @override
-  _ItemWidgetState createState() => _ItemWidgetState();
+  State<ProjectWidget> createState() => _ProjectWidgetState();
 }
 
-class _ItemWidgetState extends State<ItemWidget> 
-with SingleTickerProviderStateMixin {
+class _ProjectWidgetState extends State<ProjectWidget> with SingleTickerProviderStateMixin {
 
-  final random = Random();
-  AnimationController animationController;
-  Animation animation;
-  Animation offsetAnimation;
+  late AnimationController animationController;
+  late Animation<double> animation;
 
   @override
   void initState() {
@@ -36,35 +40,29 @@ with SingleTickerProviderStateMixin {
       parent: animationController,
       curve: Curves.ease
     ));
-
-    offsetAnimation = Tween<Offset>(begin: Offset(-1, 0), end: Offset.zero)
-    .animate(CurvedAnimation(
-      parent: animationController,
-      curve: Curves.ease
-    ));
   }
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) {
-        animationController.forward();
-      },
-      onExit: (_) {
-        animationController.reverse();
-      },
-      child: ScaleTransition(
-        scale: animation,
-        child: Padding(
-          padding: EdgeInsets.only(top: 32, right: 32),
+    return InkWell(
+      onTap: widget.onTap,
+      child: MouseRegion(
+        onEnter: (_) => animationController.forward(),
+        onExit: (_) => animationController.reverse(),
+        child: ScaleTransition(
+          scale: animation,
           child: Stack(
             children: [
-              SizedBox(
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  color: widget.backgroundColor ?? Colors.transparent
+                ),
                 height: 200,
                 width: 300,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(16),
-                  child: Image.asset('assets/' + widget.item.asset, fit: BoxFit.cover)
+                  child: Image.asset('assets/' + widget.asset, fit: widget.boxFit ?? BoxFit.cover)
                 ),
               ),
               Positioned(
@@ -79,11 +77,11 @@ with SingleTickerProviderStateMixin {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(4),
-                    child: Text(widget.item.name, style: TextStyle(
+                    child: Text(widget.title, style: TextStyle(
                       color: Colors.white,
                       fontSize: 22,
                       fontWeight: FontWeight.w700,
-                      shadows: [Shadow(blurRadius: 1)]
+                      shadows: const [Shadow(blurRadius: 1)]
                     ))
                   )
                 )
@@ -91,7 +89,7 @@ with SingleTickerProviderStateMixin {
             ]
           )
         )
-      )
+      ),
     );
   }
 }
