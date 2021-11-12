@@ -13,7 +13,6 @@ dependencies:
 
   flutter_web_plugins:
     sdk: flutter
-
   
   # Flutterfall
   equatable:
@@ -25,6 +24,7 @@ dependencies:
       url: git@github.com:nathanielxd/personal-flutter-theme.git
       ref: master
   
+  seo_renderer: ^0.3.0
   fluttertoast:
   auto_size_text:
 

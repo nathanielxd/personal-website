@@ -2,6 +2,7 @@ import 'dart:js' as js;
 
 import 'package:flutter/material.dart';
 import 'package:personal_website/project/project.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 class ProjectsView extends StatelessWidget {
 
@@ -22,12 +23,16 @@ class ProjectsView extends StatelessWidget {
         spacing: 32,
         runSpacing: 32,
         children: projects.map((e) 
-          => ProjectWidget(
-            title: e[0] as String,
-            asset: e[1] as String,
-            backgroundColor: e[2] as Color?,
-            boxFit: e[3] as BoxFit?,
-            onTap: () => js.context.callMethod('open', [e[4] as String])
+          => LinkRenderer(
+            anchorText: e[0] as String,
+            link: e[4] as String,
+            child: ProjectWidget(
+              title: e[0] as String,
+              asset: e[1] as String,
+              backgroundColor: e[2] as Color?,
+              boxFit: e[3] as BoxFit?,
+              onTap: () => js.context.callMethod('open', [e[4] as String])
+            ),
           )
         ).toList()
       ),

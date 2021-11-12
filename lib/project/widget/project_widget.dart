@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 class ProjectWidget extends StatefulWidget {
 
@@ -77,12 +78,14 @@ class _ProjectWidgetState extends State<ProjectWidget> with SingleTickerProvider
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(4),
-                    child: Text(widget.title, style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
-                      fontWeight: FontWeight.w700,
-                      shadows: const [Shadow(blurRadius: 1)]
-                    ))
+                    child: TextRenderer(
+                      text: Text(widget.title, style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w700,
+                        shadows: const [Shadow(blurRadius: 1)]
+                      )),
+                    )
                   )
                 )
               )

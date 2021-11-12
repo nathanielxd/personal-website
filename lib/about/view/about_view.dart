@@ -1,6 +1,9 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:personal_website/about/about.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 class AboutView extends StatelessWidget {
 
@@ -22,36 +25,47 @@ class AboutView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        Text('About me', style: TextStyle(
-          fontSize: 28,
-          color: Colors.white.withOpacity(0.9),
-          fontWeight: FontWeight.w600
-        )),
-        SelectableText(personalDescription),
-        SizedBox(height: 36),
-        Text('How I work', style: TextStyle(
-          fontSize: 28,
-          color: Colors.white.withOpacity(0.9),
-          fontWeight: FontWeight.w600
-        )),
-        SelectableText(workDescription),
-        SizedBox(height: 36),
-        Text('Contact', 
-          style: TextStyle(
+        TextRenderer(
+          element: HeadingElement.h2(),
+          text: Text('About me', style: TextStyle(
             fontSize: 28,
             color: Colors.white.withOpacity(0.9),
             fontWeight: FontWeight.w600
-          )
+          )),
+        ),
+        TextRenderer(text: SelectableText(personalDescription)),
+        SizedBox(height: 36),
+        TextRenderer(
+          element: HeadingElement.h2(),
+          text: Text('How I work', style: TextStyle(
+            fontSize: 28,
+            color: Colors.white.withOpacity(0.9),
+            fontWeight: FontWeight.w600
+          )),
+        ),
+        TextRenderer(text: SelectableText(workDescription)),
+        SizedBox(height: 36),
+        TextRenderer(
+          element: HeadingElement.h2(),
+          text: Text('Contact', 
+            style: TextStyle(
+              fontSize: 28,
+              color: Colors.white.withOpacity(0.9),
+              fontWeight: FontWeight.w600
+            )
+          ),
         ),
         Wrap(
           children: [
-            SelectableText('For any business inquiries, please e-mail me at '),
+            TextRenderer(
+              text: SelectableText('For any business inquiries, please e-mail me at ')
+            ),
             InkWell(
               splashColor: Colors.transparent,
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: const [
-                  Text('me@nathans.dev'),
+                  TextRenderer(text: Text('me@nathans.dev')),
                   SizedBox(width: 4),
                   Icon(Icons.copy, size: 20)
                 ]

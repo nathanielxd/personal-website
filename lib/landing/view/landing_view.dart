@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,6 +8,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:personal_theme/personal_theme.dart';
 import 'package:personal_website/home/home.dart';
 import 'package:personal_website/landing/landing.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 class LandingView extends StatefulWidget {
 
@@ -158,14 +160,17 @@ class _LandingViewState extends State<LandingView> with SingleTickerProviderStat
               opacity: controller,
               child: Padding(
                 padding: const EdgeInsets.only(top: 12),
-                child: Text('Nathaniel Dragusin',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 64,
-                    fontFamily: 'Manrope',
-                    color: Colors.white.withOpacity(0.9),
-                    fontWeight: FontWeight.w600
-                  )
+                child: TextRenderer(
+                  element: HeadingElement.h1(),
+                  text: Text('Nathaniel Dragusin',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 64,
+                      fontFamily: 'Manrope',
+                      color: Colors.white.withOpacity(0.9),
+                      fontWeight: FontWeight.w600
+                    )
+                  ),
                 )
               )
             ),
