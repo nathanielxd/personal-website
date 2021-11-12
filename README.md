@@ -4,6 +4,8 @@
 
 My own personal website. You can find it hosted here: https://nathans.dev
 
+<img src="docs/screenshot.png" height="300">
+
 ## Quick docs
 
 It features 3 pages:
