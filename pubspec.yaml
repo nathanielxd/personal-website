@@ -1,5 +1,5 @@
 name: personal_website
-description: My own personal website. Check it out at https://nathans.dev
+description: My own personal website. https://nathans.dev
 publish_to: 'none'
 version: 2.0.0
 
@@ -7,31 +7,33 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-
   flutter:
     sdk: flutter
-
   flutter_web_plugins:
     sdk: flutter
   
   # Flutterfall
-  equatable:
-  flutter_bloc:
+  equatable: ^2.0.3
+  flutter_bloc: ^8.0.1
 
-  # Presentation
+  seo_renderer: ^0.3.0
+  fluttertoast: ^8.0.9
+  auto_size_text: ^3.0.0
+
   personal_theme:
     git:
       url: git@github.com:nathanielxd/personal-flutter-theme.git
       ref: master
-  
-  seo_renderer: ^0.3.0
-  fluttertoast:
-  auto_size_text:
+
+  fast_strings:
+    git:
+      url: git@github.com:nathanielxd/fast-strings.git
+      ref: master
 
 dev_dependencies:
-  flutter_lints:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^1.0.0
 
 flutter:
   uses-material-design: true

@@ -10,7 +10,7 @@ class AppView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Nathaniel Dragusin | Flutter Developer',
+      title: 'Nathaniel Dragusin',
       theme: WebTheme.data,
       navigatorObservers: [ routeObserver ],
       routes: {

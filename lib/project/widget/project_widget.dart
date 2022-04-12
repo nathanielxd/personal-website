@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:seo_renderer/seo_renderer.dart';
 
@@ -44,7 +45,16 @@ class _ProjectWidgetState extends State<ProjectWidget> with SingleTickerProvider
   }
 
   @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final isWebMobile = kIsWeb 
+      && (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.android);
+
     return InkWell(
       onTap: widget.onTap,
       child: MouseRegion(
@@ -59,8 +69,8 @@ class _ProjectWidgetState extends State<ProjectWidget> with SingleTickerProvider
                   borderRadius: BorderRadius.circular(16),
                   color: widget.backgroundColor ?? Colors.transparent
                 ),
-                height: 200,
-                width: 300,
+                height: 150,
+                width: 250,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(16),
                   child: Image.asset('assets/' + widget.asset, fit: widget.boxFit ?? BoxFit.cover)
@@ -73,7 +83,7 @@ class _ProjectWidgetState extends State<ProjectWidget> with SingleTickerProvider
                   animation: animationController,
                   builder: (context, widget) 
                   => Container(
-                    color: Colors.black.withOpacity(animationController.value),
+                    color: isWebMobile ? Colors.black : Colors.black.withOpacity(animationController.value),
                     child: widget,
                   ),
                   child: Padding(

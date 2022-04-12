@@ -18,23 +18,32 @@ class ProjectsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Wrap(
-        spacing: 32,
-        runSpacing: 32,
-        children: projects.map((e) 
-          => LinkRenderer(
-            anchorText: e[0] as String,
-            link: e[4] as String,
-            child: ProjectWidget(
-              title: e[0] as String,
-              asset: e[1] as String,
-              backgroundColor: e[2] as Color?,
-              boxFit: e[3] as BoxFit?,
-              onTap: () => js.context.callMethod('open', [e[4] as String])
-            ),
-          )
-        ).toList()
+    final width = MediaQuery.of(context).size.width;
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        maxWidth: width > 1200 ? width * 0.8 : 600,
+      ),
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Wrap(
+            spacing: 32,
+            runSpacing: 32,
+            children: projects.map((e) 
+              => LinkRenderer(
+                anchorText: e[0] as String,
+                link: e[4] as String,
+                child: ProjectWidget(
+                  title: e[0] as String,
+                  asset: e[1] as String,
+                  backgroundColor: e[2] as Color?,
+                  boxFit: e[3] as BoxFit?,
+                  onTap: () => js.context.callMethod('open', [e[4] as String])
+                ),
+              )
+            ).toList()
+          ),
+        ),
       ),
     );
   }

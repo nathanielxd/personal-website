@@ -1,4 +1,7 @@
+import 'dart:js' as js;
+
 import 'package:bloc/bloc.dart';
+import 'package:fast_strings/fast_strings.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -14,4 +17,10 @@ class AboutCubit extends Cubit<void> {
       webBgColor: 'linear-gradient(to right, #002e52, #000f30)'
     );
   }
+
+  void openResume() async => await js.context.callMethod('open', [Strings.data['links']['resume']]);
+
+  void openGithub() async => await js.context.callMethod('open', [Strings.data['links']['github']]);
+
+  void openLinkedin() async => await js.context.callMethod('open', [Strings.data['links']['linkedin']]);
 }

@@ -47,7 +47,7 @@ class HomeView extends StatelessWidget {
                             Padding(
                               key: ValueKey('landing'),
                               padding: const EdgeInsets.symmetric(horizontal: 24),
-                              child: LandingPage(isDesktop: true)
+                              child: LandingPage()
                             ),
                             Padding(
                               key: ValueKey('projects'),
@@ -56,18 +56,11 @@ class HomeView extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 24),
-                              child: ConstrainedBox(
-                                constraints: BoxConstraints(
-                                  minWidth: 400,
-                                  maxWidth: 1000
-                                ),
-                                child: AboutPage()
-                              )
+                              child: AboutPage()
                             )
                           ][state]
                         )
                       ),
-                      Spacer(flex: 2)
                     ]
                   );
                 }
@@ -96,7 +89,7 @@ class HomeView extends StatelessWidget {
                             Padding(
                               key: ValueKey('home'),
                               padding: const EdgeInsets.symmetric(horizontal: 24),
-                              child: LandingPage(isDesktop: false)
+                              child: LandingPage()
                             ),
                             Padding(
                               key: ValueKey('projects'),
@@ -105,13 +98,7 @@ class HomeView extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 24),
-                              child: ConstrainedBox(
-                                constraints: BoxConstraints(
-                                  minWidth: 400,
-                                  maxWidth: 1000
-                                ),
-                                child: AboutPage()
-                              )
+                              child: AboutPage()
                             )
                           ][state]
                         )

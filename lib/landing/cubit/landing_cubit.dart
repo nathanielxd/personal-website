@@ -1,18 +1,17 @@
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-import 'package:flutter/services.dart';
 import 'dart:js' as js;
+
+import 'package:bloc/bloc.dart';
+import 'package:fast_strings/fast_strings.dart';
+import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-part 'landing_state.dart';
 
-class LandingCubit extends Cubit<LandingState> {
+class LandingCubit extends Cubit<void> {
 
-  final bool isDesktop;
-  LandingCubit({required this.isDesktop}) : super(LandingState(isDesktop: isDesktop));
+  LandingCubit() : super(null);
   
   void copyEmail() async {
-    await Clipboard.setData(ClipboardData(text: state.email));
+    await Clipboard.setData(ClipboardData(text: Strings.data['landing']['email']));
     // TODO replace fluttertoast with an alternative
     Fluttertoast.showToast(
       msg: 'Copied to clipboard.', 
@@ -21,9 +20,9 @@ class LandingCubit extends Cubit<LandingState> {
     );
   }
 
-  void openEmail() async => await js.context.callMethod('open', ['mailto:${state.email}']);
+  void openEmail() async => await js.context.callMethod('open', ['mailto:${Strings.data['landing']['email']}']);
 
-  void openResume() async => await js.context.callMethod('open', [state.resumeLink]);
+  void openResume() async => await js.context.callMethod('open', [Strings.data['links']['resume']]);
 
-  void openGithub() async => await js.context.callMethod('open', [state.githubLink]);
+  void openGithub() async => await js.context.callMethod('open', [Strings.data['links']['github']]);
 }

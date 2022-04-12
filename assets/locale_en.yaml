@@ -1,0 +1,18 @@
+landing:
+  email: me@nathans.dev
+  description: Web | Mobile | Application Developer
+
+about:
+  personal-description: |
+    Enthusiastic developer with strong experience in app development, project architecture and app design.
+    Being highly motivated, I put passion into my work, delivering powerful and scalable products.
+    With numerous projects published, application engineering has become main focus in my career.
+  work-description:
+    I put focus on delivering stable and scalable applications. 
+    Having concepted an architectural pattern for my framework of choice, I am able to provide a
+    powerful environment for project development.
+
+links:
+  resume: https://firebasestorage.googleapis.com/v0/b/nathaniel-dev.appspot.com/o/NathanielDragusinResume.pdf?alt=media&token=1bb9234f-4186-4baf-ba62-73037ac59be5
+  github: https://github.com/nathanielxd/
+  linkedin: https://www.linkedin.com/in/nathans-dev/

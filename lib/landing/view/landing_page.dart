@@ -4,13 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LandingPage extends StatelessWidget {
   
-  final bool isDesktop;
-  const LandingPage({Key? key, required this.isDesktop}) : super(key: key);
+  const LandingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 		return BlocProvider(
-      create: (_) => LandingCubit(isDesktop: isDesktop),
+      create: (_) => LandingCubit(),
       child: LandingView()
     );
   }
