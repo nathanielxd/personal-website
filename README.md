@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/badge/Architecture-Flutterfall-yellow?style=for-the-badge)](https://github.com/nathanielxd/flutterfall) [![](https://img.shields.io/badge/WEBSITE-NATHANS.dev-green?style=for-the-badge)](https://nathans.dev)
 
-My own personal website. You can find it hosted here: https://nathans.dev
+My own personal website served at https://nathans.dev
 
 <img src="docs/screenshot.png" height="300">
 
